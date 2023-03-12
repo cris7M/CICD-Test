@@ -1,0 +1,39 @@
+docker installation guide
+	https://docs.docker.com/engine/install/ubuntu/
+	
+docker build -t crish786/hello-world:latest .
+docker login
+sudo docker push crish786/hello-world:latest
+sudo docker pull crish786/hello-world:latest
+docker  run -p 5000:5000 crish786/hello-world:latest
+
+docker ps -> process 
+docker rm -> remove container
+
+with plugin installation
+sudo docker run -d   -p 3000:3000   --name=grafana   -e "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource"   grafana/grafana
+
+kubernates
+https://ubuntu.com/kubernetes/install
+
+
+python+flask + grafana ->
+docker
+
+kubernates (python+grafana)
+
+jenkin job create (github)  
+
+
+jenkin installation guide
+
+1. install java if not install 
+2. install maven 
+sudo apt-get install maven 
+3. install jenkins
+sudo wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/> /etc/apt/sources.list.d/jenkins.list'
+sudo apt-get update
+sudo apt-get install jenkins
+
+
