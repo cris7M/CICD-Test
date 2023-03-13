@@ -16,7 +16,7 @@ def health_check():
     return 'This datasource is healthy.'
 
 @app.route('/jenkin')
-def health_check():
+def jenkin_check():
     return 'Testing for jenkin build.'
 
 @app.route('/search', methods=['POST'])
