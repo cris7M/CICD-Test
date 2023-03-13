@@ -36,4 +36,17 @@ sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/> /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install jenkins
 
+docker jenkin installtion
+sudo docker pull jenkin/jenkin
+sudo docker run -p 9080:8080 -d -v /home/krishnasanjay/Desktop/DEV/HelloFlask/jenkin_vol:/var/jenkins_home/ jenkins/jenkins
+
+If you found docker not found while build is happening 
+install docker inside jenkin container
+sudo docker run -p 9080:8080 -v /var/run/docker.sock:/var/run/docker.sock -d -v /home/krishnasanjay/Desktop/DEV/HelloFlask/jenkin_vol:/var/jenkins_home/ jenkins/jenkins
+sudo docker exec -u 0 -it fb10e779793d /bin/bash
+curl https://get.docker.com/ > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
+exit
+sudo chmod 666 /var/run/docker.sock
+
+
 
