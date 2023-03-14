@@ -42,11 +42,30 @@ sudo docker run -p 9080:8080 -d -v /home/krishnasanjay/Desktop/DEV/HelloFlask/je
 
 If you found docker not found while build is happening 
 install docker inside jenkin container
-sudo docker run -p 9080:8080 -v /var/run/docker.sock:/var/run/docker.sock -d -v /home/krishnasanjay/Desktop/DEV/HelloFlask/jenkin_vol:/var/jenkins_home/ jenkins/jenkins
-sudo docker exec -u 0 -it fb10e779793d /bin/bash
-curl https://get.docker.com/ > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
-exit
-sudo chmod 666 /var/run/docker.sock
+-sudo docker run -p 9080:8080 -v /var/run/docker.sock:/var/run/docker.sock -d -v /home/krishnasanjay/Desktop/DEV/HelloFlask/jenkin_vol:/var/jenkins_home/ jenkins/jenkins
+-sudo docker exec -u 0 -it fb10e779793d /bin/bash
+-curl https://get.docker.com/ > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
+-exit
+-sudo chmod 666 /var/run/docker.sock
 
+
+Install VirtualBox: Minikube requires a hypervisor to create a virtual machine. VirtualBox is a popular hypervisor that you can install on Ubuntu by running the following commands:
+-sudo apt update
+-sudo apt install virtualbox
+
+Install kubectl: You will also need to install kubectl to interact with your Kubernetes cluster. You can install kubectl on Ubuntu by running the following commands:
+-sudo apt update
+-sudo apt install -y apt-transport-https curl
+-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+-sudo apt update
+-sudo apt install -y kubectl
+
+Install Minikube: You can install Minikube on Ubuntu by downloading the latest release binary from the official GitHub repository. Run the following commands to download and install Minikube:
+-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+-sudo install minikube-linux-amd64 /usr/local/bin/minikube
+-Start Minikube: Once you have installed Minikube, you can start it by running the following command:
+-minikube start
+-minikube dashboard --url
 
 
