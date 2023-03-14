@@ -48,7 +48,7 @@ install docker inside jenkin container
 -exit
 -sudo chmod 666 /var/run/docker.sock
 
-
+**************************Kubernetes********************************************
 Install VirtualBox: Minikube requires a hypervisor to create a virtual machine. VirtualBox is a popular hypervisor that you can install on Ubuntu by running the following commands:
 -sudo apt update
 -sudo apt install virtualbox
@@ -67,5 +67,21 @@ Install Minikube: You can install Minikube on Ubuntu by downloading the latest r
 -Start Minikube: Once you have installed Minikube, you can start it by running the following command:
 -minikube start
 -minikube dashboard --url
+
+For deploments need below command after the yaml file creation
+-kubectl apply -f flask-deployment.yaml
+-kubectl apply -f grafana-deployment.yaml
+-kubectl apply -f flask-service.yaml
+-kubectl apply -f grafana-service.yaml
+
+After Deployments userful command
+-kubectl get pods
+-kubectl get services
+-kubectl describe pod <container>
+-kubectl logs <container>
+
+To Find the Ip and port
+-minikube services --url flask-service
+-minikube services --url flask-service
 
 
