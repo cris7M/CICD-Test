@@ -20,7 +20,7 @@ def jenkin_check():
     return 'Testing for jenkin build.'
 
 @app.route('/test')
-def jenkin_check():
+def test_check():
     return 'test endpoint working'
 
 @app.route('/search', methods=['POST'])
