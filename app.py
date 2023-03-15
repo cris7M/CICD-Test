@@ -19,6 +19,10 @@ def health_check():
 def jenkin_check():
     return 'Testing for jenkin build.'
 
+@app.route('/test')
+def jenkin_check():
+    return 'test endpoint working'
+
 @app.route('/search', methods=['POST'])
 def search():
     return jsonify(['my_series'])
