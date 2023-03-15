@@ -23,6 +23,10 @@ def jenkin_check():
 def test_check():
     return 'test endpoint working'
 
+@app.route('/test1')
+def test_1_check():
+    return 'test1 endpoint working'
+
 @app.route('/search', methods=['POST'])
 def search():
     return jsonify(['my_series'])
